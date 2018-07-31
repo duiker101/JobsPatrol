@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "JobPatrol",
+  "description": "Keep an eye on the websites you are visiting if any are offering jobs",
+  "version": "1.0",
+  "icons": { "512": "icon.png"},
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "red.png",
+    "default_title": "Open jobs page"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*","https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
