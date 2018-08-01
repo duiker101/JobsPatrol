@@ -1,5 +1,6 @@
 ## JobsPatrol
-Some of the best jobs I had were found just by finding the listing on their website. Unfortunately the link to a jobs page is often hidden away at the bottom of a page or in some menu where I have to go find it intentionally. This is where JobsPatrol comes in, it checks for those pages with the use of AI and complex algorithms and lets you know when it finds one. Easy.
+
+Most links to career and jobs pages are hidden away at the bottom of websites or in some arcane menu. With JobsPatrol you will never have to go wandering again. Thanks to the use advanced AI your browser will always let you know when a website might be offering some jobs.
 
 ## Credits
 
