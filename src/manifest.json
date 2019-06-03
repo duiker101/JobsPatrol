@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "JobPatrol",
-  "description": "Keep an eye on the websites you are visiting if any are offering jobs",
+  "name": "Patrol",
+  "description": "my test extension",
   "version": "1.0",
   "icons": { "512": "icon.png"},
   "background": {
@@ -13,8 +13,8 @@
     "tabs"
   ],
   "browser_action": {
-    "default_icon": "red.png",
-    "default_title": "Open jobs page"
+    "default_icon": "yellow.png",
+    "default_title": "Open page"
   },
   "content_scripts": [
     {
