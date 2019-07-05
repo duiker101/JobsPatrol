@@ -9,7 +9,7 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 });
 
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
-    if(currentTab > 0)
+    if (currentTab > 0)
         updateIcon(currentTab);
 });
 
@@ -20,13 +20,13 @@ chrome.tabs.onActiveChanged.addListener(function (tabId, info) {
 
 function updateIcon(tabId) {
     let found = jobs[tabId];
-    if (jobs[tabId]) {
-        if (found === 1) {
+    if (!!found) {
+        if (found.type === 1) {
             chrome.browserAction.setIcon({path: 'blue.png', tabId: tabId});
-        } else if (found === 2) {
+        } else if (found.type === 2) {
             chrome.browserAction.setIcon({path: 'green.png', tabId: tabId});
         }
-    } else if (found === 0) {
+    } else if (!found || found === 0) {
         chrome.browserAction.setIcon({path: 'red.png', tabId: tabId});
         chrome.browserAction.disable(tabId);
     }
@@ -69,14 +69,14 @@ chrome.runtime.onMessage.addListener(
         // a link has been found, update the browser action
         if (found !== null) {
             if (allText.toLocaleLowerCase().indexOf('remote') >= 0) {
-                jobs[tabId] = 1;
+                jobs[tabId] = {type: 1, href: found.href};
                 chrome.browserAction.setIcon({path: 'blue.png', tabId: tabId});
             } else {
-                jobs[tabId] = 2;
+                jobs[tabId] = {type: 2, href: found.href};
                 chrome.browserAction.setIcon({path: 'green.png', tabId: tabId});
             }
         } else {
-            jobs[tabId] = 0;
+            jobs[tabId] = {type: 0};
             chrome.browserAction.setIcon({path: 'red.png', tabId: tabId});
             chrome.browserAction.disable(tabId);
         }
