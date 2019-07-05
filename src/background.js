@@ -49,14 +49,14 @@ chrome.runtime.onMessage.addListener(
         // test the links and titles
         for (let l of links) {
             for (let t of toTestLinks) {
-                if (l.href.indexOf(t) >= 0) {
+                if (l.href.toLocaleLowerCase().indexOf(t.toLocaleLowerCase()) >= 0) {
                     found = l;
                     break;
                 }
             }
 
             for (let t of toTestTitles) {
-                if (l.title.indexOf(t) >= 0) {
+                if (l.title.toLocaleLowerCase().indexOf(t.toLocaleLowerCase()) >= 0) {
                     found = l;
                     break;
                 }
