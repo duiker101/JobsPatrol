@@ -1,5 +1,3 @@
-// chrome.runtime.sendMessage({action: 'loading'});
-
 window.addEventListener('focus', function() {
     sendMsg('focus');
 });

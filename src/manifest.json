@@ -1,29 +1,21 @@
 {
-  "manifest_version": 2,
-  "name": "Patrol",
-  "description": "my test extension",
-  "version": "1.0",
-  "icons": { "512": "icon.png"},
-  "background": {
-    "scripts": [
-      "background.js"
-    ]
-  },
-  "permissions": [
-    "tabs"
-  ],
-  "browser_action": {
-    "default_icon": "yellow.png",
-    "default_title": "Open page"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*","https://*/*"
-      ],
-      "js": [
-        "content.js"
-      ]
-    }
-  ]
+	"manifest_version": 2,
+	"name": "Patrol",
+	"description": "Find job pages on the sites you visit",
+	"version": "1.0",
+	"icons": {"512": "icon.png"},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": ["tabs"],
+	"browser_action": {
+		"default_icon": "img/yellow.png",
+		"default_title": "Open page"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["content.js"]
+		}
+	]
 }
